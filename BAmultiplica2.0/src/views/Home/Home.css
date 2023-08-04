@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "FunSized";
+  src: url("../../assets/FunSized.ttf") format("truetype");
+}
+
+.fontCustom2 {
+  font-family: "FunSized", cursive;
+}
+
+.titulo {
+  font-size: 6em;
+  margin-right: 0.8em;
+  margin-top: 2em;
+  border: transparent;
+  background-color: rgba(242, 239, 235, 0.537);
+}
+
+.textoInicio {
+    border: solid;
+    padding: 1em;
+    background-color: rgba(249, 240, 228, 0.535);
+    opacity: 0.9;
+    border-radius: 1em;
+}
