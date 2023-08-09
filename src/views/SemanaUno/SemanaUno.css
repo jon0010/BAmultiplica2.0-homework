@@ -7,100 +7,53 @@
   background-color: rgb(236, 235, 233);
   border-radius: 1em;
   padding: 1em;
+  overflow-x: hidden;
 }
 
 .titulos1 {
   font-family: "Giants", cursive;
   font-size: 10em;
+  overflow-x: hidden;
 }
 
 .cardBox {
-  width: 60em;
-  height: 40em;
-  position: relative;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
-    rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
+  max-width: 600px;
+  height: 500px; /* Ajusta la altura fija para las cards según tus necesidades */
+  display: flex;
+  overflow-x: hidden;
 }
 
 .card {
-  position: absolute;
-  width: 95%;
-  height: 95%;
-  background: #000814;
-  border-radius: 20px;
-  z-index: 5;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  color: #ffffff;
-  overflow: hidden;
-  padding: 20px;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
+  flex-direction: column; /* Asegura que el contenido esté dispuesto en columna */
+  justify-content: space-between; /* Espaciado entre el contenido en la card */
+  overflow-x: hidden;
 }
 
-.card .h4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-weight: 800;
-  pointer-events: none;
-  opacity: 0.5;
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  margin-bottom: 2em;
+  overflow-x: hidden;
 }
 
-.card .content .h3 {
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.card .content p {
-  font-size: 14px;
-  line-height: 1.4em;
-}
-
-.card .content {
-  transform: translateY(100%);
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-}
-
-.card:hover .content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.card:hover .h4 {
-  opacity: 0;
-}
-
-.cardBox::before {
-  content: "";
-  position: absolute;
-  width: 40%;
-  height: 150%;
-  background: #40e0d0;
-  background: -webkit-linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
-  background: linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
-  transform-origin: center;
-  animation: glowing_401 5s linear infinite;
-}
-
-@keyframes glowing_401 {
-  0% {
-    transform: rotate(0);
+@media (max-width: 576px) {
+  .tarea-title {
+    font-size: 5rem;
   }
+}
 
-  100% {
-    transform: rotate(360deg);
+@media (max-width: 576px) {
+  .imagenAncha {
+    width: 32em;
+  }
+}
+
+@media (max-width: 576px) {
+  .svgAncho {
+    width: 22em;
   }
 }
