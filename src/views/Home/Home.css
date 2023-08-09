@@ -16,9 +16,9 @@
 }
 
 .textoInicio {
-    border: solid;
-    padding: 1em;
-    background-color: rgba(249, 240, 228, 0.535);
-    opacity: 0.9;
-    border-radius: 1em;
+  border: solid;
+  padding: 1em;
+  background-color: rgba(249, 240, 228, 0.535);
+  opacity: 0.9;
+  border-radius: 1em;
 }
