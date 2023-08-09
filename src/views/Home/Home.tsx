@@ -4,19 +4,20 @@ import "./Home.css";
 const Home = () => {
   return (
     <div
-      className="container-fluid"
+      className="container-fluid home-div"
       style={{
         backgroundImage: `url(${image1})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
+        minHeight: "100vh", // Cambiamos height a minHeight
         display: "flex",
-        alignItems: "center",
-        justifyContent: "end",
+        flexDirection: "column", // Cambiamos la dirección a columna
+        justifyContent: "center", // Centramos verticalmente
+        alignItems: "end", // Alineamos horizontalmente a la derecha
       }}
     >
-      <div className="row me-5">
+      <div className="row">
         <div className="col-12 text-center fontCustom2">
           <h1 className="titulo lh-lg">
             BUENOS AIRES <br /> MULTIPLICA 2.0
