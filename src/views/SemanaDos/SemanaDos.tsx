@@ -1,4 +1,3 @@
-import videoSemana2 from "../../assets/videoSemana2.mp4";
 import "./semanaDos.css";
 
 const SemanaDos = () => {
@@ -44,10 +43,16 @@ const SemanaDos = () => {
           </p>
         </div>
         <div className="embed-responsive embed-responsive-16by9">
-          <video className="img-fluid mx-auto d-block" controls>
-            <source src={videoSemana2} type="video/mp4" />
-            Tu navegador no admite el elemento de video.
-          </video>
+          <iframe
+            className="iframe-container"
+            width="861"
+            height="615"
+            src="https://www.youtube.com/embed/gVIlfC4QwbE"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </div>
