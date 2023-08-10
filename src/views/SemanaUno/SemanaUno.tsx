@@ -26,7 +26,7 @@ const SemanaUno = () => {
         </p>
       </div>
       <div>
-        <h2 className="titulos1 text-center tarea-title">TAREA 1</h2>
+        <h2 className="titulos1 text-center tarea-title fs-1">TAREA 1</h2>
       </div>
       <div className="row justify-content-center">
         <div className="tarjetas1 col-md-6 col-sm-12 text-center">
@@ -80,7 +80,7 @@ const SemanaUno = () => {
         </div>
       </div>
       <div>
-        <h2 className="titulos1 text-center mt-5 mb-5 tarea-title">TAREA 2</h2>
+        <h2 className="titulos1 text-center mt-5 mb-5 tarea-title fs-1">TAREA 2</h2>
         <div className="text-center">
           <h3>
             LOGOTIPO: Hablamos de logotipo cuando se identifica por el texto{" "}
@@ -144,7 +144,7 @@ const SemanaUno = () => {
         </p>
       </div>
       <hr />
-      <h2 className="titulos1 text-center tarea-title">TAREA 3</h2>
+      <h2 className="titulos1 text-center tarea-title fs-1">TAREA 3</h2>
       <div>
         <div>
           <h3 className="text-center mt-4 mb-5">ACTIVIDAD 1</h3>
