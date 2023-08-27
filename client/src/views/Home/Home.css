@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "FunSized";
+  src: url("../../assets/FunSized.ttf") format("truetype");
+}
+
+.fontCustom2 {
+  font-family: "FunSized", cursive;
+}
+
+.titulo {
+  font-size: 3em;
+  margin-top: 2em;
+  border: transparent;
+  background-color: rgba(242, 239, 235, 0.537);
+}
+
+.textoInicio {
+  border: solid;
+  padding: 1em;
+  background-color: rgba(249, 240, 228, 0.535);
+  opacity: 0.9;
+  border-radius: 1em;
+  margin-left: 2.9em;
+}
+
+/* Estilos para hacer el componente responsive */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2em;
+    width: 12em;
+    margin-left: 0.5em;
+  }
+
+  .row.me-5 {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+  }
+}

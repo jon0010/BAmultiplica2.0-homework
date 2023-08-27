@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Giants";
+  src: url("../../assets/Giants.ttf") format("truetype");
+}
+
+.textos1 {
+  background-color: rgb(236, 235, 233);
+  border-radius: 1em;
+  padding: 1em;
+  overflow-x: hidden;
+}
+
+.titulos1 {
+  font-family: "Giants", cursive;
+  overflow-x: hidden;
+}
+
+.cardBox {
+  max-width: 600px;
+  height: 500px; /* Ajusta la altura fija para las cards según tus necesidades */
+  display: flex;
+  overflow-x: hidden;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Asegura que el contenido esté dispuesto en columna */
+  justify-content: space-between; /* Espaciado entre el contenido en la card */
+  overflow-x: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  margin-bottom: 2em;
+  overflow-x: hidden;
+}
+
+@media (max-width: 576px) {
+  .tarea-title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .imagenAncha {
+    width: 32em;
+  }
+}
+
+@media (max-width: 576px) {
+  .svgAncho {
+    width: 22em;
+  }
+}

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Giants";
+  src: url("../../assets/Giants.ttf") format("truetype");
+}
+
+.fontCustom1 {
+  font-family: "Giants", cursive;
+}
+
+.navbar-nav li {
+  margin-right: 12rem;
+}
