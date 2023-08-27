@@ -1,5 +1,5 @@
 import express, { ErrorRequestHandler } from "express";
-import mainRouter from "./src/routes/mainRouter";
+import mainRouter from "./routes/mainRouter";
 import morgan from "morgan";
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
