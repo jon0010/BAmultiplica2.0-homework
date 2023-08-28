@@ -8,7 +8,9 @@
     "start:both": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "build:bamultiplica2-0": "cd frontend && npm run build",
     "build:server": "cd backend && npm run build",
-    "build:both": "npm run build:frontend && npm run build:backend"
+    "build:both": "npm run build:frontend && npm run build:backend",
+    "start": "npm run start:both",
+    "build": "npm run build:both"
   },
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
