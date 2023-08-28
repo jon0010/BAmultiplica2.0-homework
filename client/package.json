@@ -23,8 +23,10 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
+    "cloudinary": "^1.40.0",
     "cloudinary-react": "^1.8.1",
     "core-js": "^3.32.1",
+    "dotenv": "^16.3.1",
     "font-awesome-icons": "^1.6.0",
     "gsap": "^3.12.1",
     "pdfjs-dist": "^3.9.179",
@@ -39,7 +41,7 @@
     "react-slick": "^0.29.0",
     "sass": "^1.63.6",
     "slick-carousel": "^1.8.1",
-    "sweetalert2": "^11.7.18"
+    "sweetalert2": "^11.7.27"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

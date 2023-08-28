@@ -4,6 +4,7 @@ import morgan from "morgan";
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
+import multer from "multer";
 import "dotenv/config";
 import "./db";
 
@@ -12,6 +13,17 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, "uploads"), // Cambia la carpeta según tu preferencia
+  filename: function (_req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
+export { cloudinary, upload };
 
 const dirname = path.dirname(path.resolve());
 

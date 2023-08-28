@@ -59,6 +59,15 @@ const Navbar = () => {
                 SEMANA 4
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active fontCustom1 fs-3"
+                aria-current="page"
+                to="/historial"
+              >
+                HISTORIAL DE EVALUACIONES
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

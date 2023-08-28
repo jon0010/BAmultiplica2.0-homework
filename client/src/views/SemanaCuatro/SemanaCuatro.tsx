@@ -4,7 +4,9 @@ import ImageEvaluation from "./ImageEvaluation";
 
 interface Evaluation {
   image: string;
-  ratings: number[];
+  ratings: Record<string, number>;
+  evaluatorName: string;
+  summary: string;
 }
 
 const SemanaCuatro: React.FC = () => {
@@ -17,16 +19,10 @@ const SemanaCuatro: React.FC = () => {
   return (
     <div className="container-fluid">
       <h2 className="text-center">Evaluador de Flyers</h2>
-      <ImageEvaluation addToHistory={addToHistory} history={[]} />
-      <div className="evaluation-history">
-        <h3>Historial de Evaluaciones</h3>
-        {evaluations.map((evaluation, index) => (
-          <div key={index} className="evaluation-entry">
-            <img src={evaluation.image} alt="Evaluated Image" />
-            <p>Ratings: {evaluation.ratings.join(", ")}</p>
-          </div>
-        ))}
-      </div>
+      <ImageEvaluation
+        addToHistory={addToHistory}
+        evaluationHistory={evaluations}
+      />
     </div>
   );
 };
