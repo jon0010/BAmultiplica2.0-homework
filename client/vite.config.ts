@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     manifest: true,
     rollupOptions: {
-      input: "../client/src/main.tsx", // Ruta a tu archivo de entrada principal
+      input: "src/main.tsx", // Ruta a tu archivo de entrada principal
     },
   },
 });
