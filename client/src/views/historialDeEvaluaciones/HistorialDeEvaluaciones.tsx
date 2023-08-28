@@ -24,7 +24,9 @@ const HistorialDeEvaluaciones: React.FC<
       .get("http://localhost:3001/evaluation")
       .then((response) => {
         setEvaluations(response.data);
+        console.log({ a: response.data });
       })
+
       .catch((error) => {
         console.error("Error fetching evaluations:", error);
       });

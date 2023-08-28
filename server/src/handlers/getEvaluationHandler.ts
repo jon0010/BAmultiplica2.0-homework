@@ -8,7 +8,6 @@ const getEvaluationsHandler = async (_req: Request, res: Response) => {
     // Mapea las evaluaciones para agregar la URL de Cloudinary
     const evaluationsWithUrls = evaluations.map((evaluation) => ({
       ...evaluation.toObject(),
-      image: evaluation.image, // Dejar la URL tal como está
     }));
 
     res.status(200).json(evaluationsWithUrls);

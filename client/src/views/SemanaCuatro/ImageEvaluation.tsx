@@ -82,7 +82,6 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setImageUrl(imageUrl);
-      // Guardar la URL de la imagen en el Local Storage
       localStorage.setItem("image_url", imageUrl);
     }
   };

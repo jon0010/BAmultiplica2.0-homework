@@ -4,7 +4,7 @@ import morgan from "morgan";
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
-import multer from "multer";
+import cors from "cors";
 import "dotenv/config";
 import "./db";
 
@@ -13,17 +13,6 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, "uploads"), // Cambia la carpeta según tu preferencia
-  filename: function (_req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
-
-const upload = multer({ storage });
-
-export { cloudinary, upload };
 
 const dirname = path.dirname(path.resolve());
 
@@ -38,12 +27,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(cors());
 app.options("*", (_req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   res.sendStatus(200);
@@ -54,7 +44,7 @@ app.use((_, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();

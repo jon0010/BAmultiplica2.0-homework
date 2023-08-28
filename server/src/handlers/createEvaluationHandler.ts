@@ -1,15 +1,16 @@
 import { Request, Response } from "express";
-import Evaluations from "../models/Evaluations"; // Asegúrate de importar el modelo correctamente
+import Evaluations from "../models/Evaluations";
+import "dotenv/config";
 
 const createEvaluationHandler = async (req: Request, res: Response) => {
   try {
-    const { image, ratings, evaluatorName, summary } = req.body;
-
+    const { ratings, evaluatorName, summary, image } = req.body;
+    console.log({ a: req.body });
     const newEvaluation = new Evaluations({
-      image,
+      image: image,
       ratings,
-      evaluatorName, // Nuevo campo: nombre del evaluador
-      summary, // Nuevo campo: resumen final
+      evaluatorName,
+      summary,
     });
 
     await newEvaluation.save();
