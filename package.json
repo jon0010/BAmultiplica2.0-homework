@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start:bamultiplica2-0": "cd client && npm run dev",
-    "start:server": "cd server && npm run dev",
-    "start:both": "concurrently \"npm run start:client\" \"npm run start:server\"",
-    "build:bamultiplica2-0": "cd client && npm run build",
-    "build:server": "cd server && npm run build",
-    "build:both": "npm run build:bamultiplica2-0 && npm run build:server",
-    "start": "npm run start:both",
-    "build": "npm run build:both"
+    "start": "npm run start",
+    "build": "npm run build && tsc"
   },
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
