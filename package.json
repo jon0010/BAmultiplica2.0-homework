@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start:frontend": "cd frontend && npm run dev",
-    "start:backend": "cd backend && npm run dev",
+    "start:bamultiplica2-0": "cd frontend && npm run dev",
+    "start:server": "cd backend && npm run dev",
     "start:both": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
-    "build:frontend": "cd frontend && npm run build",
-    "build:backend": "cd backend && npm run build",
+    "build:bamultiplica2-0": "cd frontend && npm run build",
+    "build:server": "cd backend && npm run build",
     "build:both": "npm run build:frontend && npm run build:backend"
   },
   "dependencies": {
