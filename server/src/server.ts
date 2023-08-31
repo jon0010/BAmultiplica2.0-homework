@@ -5,6 +5,7 @@ import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
 import multer from "multer";
+import cors from "cors";
 import "dotenv/config";
 import "./db";
 
@@ -15,7 +16,7 @@ cloudinary.config({
 });
 
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, "uploads"), // Cambia la carpeta según tu preferencia
+  destination: path.join(__dirname, "uploads"),
   filename: function (_req, file, cb) {
     cb(null, Date.now() + "-" + file.originalname);
   },
@@ -29,6 +30,11 @@ const dirname = path.dirname(path.resolve());
 
 const app = express();
 
+const corsOptions = {
+  origin: "https://b-amultiplica2-0-homework-slci.vercel.app",
+  credentials: true,
+};
+
 // settings
 app.set("port", process.env.PORT_NAME ?? 3001);
 app.set("views", path.join(dirname, "views"));
@@ -37,6 +43,7 @@ app.set("views", path.join(dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.options("*", (_req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
