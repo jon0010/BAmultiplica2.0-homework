@@ -30,10 +30,10 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
     Record<string, number>
   >({});
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [evaluatorName, setEvaluatorName] = useState<string>(""); // Nuevo estado: nombre del evaluador
+  const [evaluatorName, setEvaluatorName] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [, setSelectedFile] = useState<File | null>(null);
   const navigate = useNavigate();
 
   const uploadPreset = VITE_UPLOAD_PRESET;
