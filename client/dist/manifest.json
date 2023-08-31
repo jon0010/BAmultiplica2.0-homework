@@ -1,0 +1,211 @@
+{
+  "assets/FunSized.ttf": {
+    "file": "assets/FunSized-0000166c.ttf",
+    "src": "assets/FunSized.ttf"
+  },
+  "assets/Giants.ttf": {
+    "file": "assets/Giants-29f06371.ttf",
+    "src": "assets/Giants.ttf"
+  },
+  "assets/ba-multiplica.jpg": {
+    "file": "assets/ba-multiplica-3bc85d2e.jpg",
+    "src": "assets/ba-multiplica.jpg"
+  },
+  "assets/image1.jpg": {
+    "file": "assets/image1-0965a722.jpg",
+    "src": "assets/image1.jpg"
+  },
+  "assets/imagotipo.png": {
+    "file": "assets/imagotipo-f91752bb.png",
+    "src": "assets/imagotipo.png"
+  },
+  "assets/isologo.png": {
+    "file": "assets/isologo-e13fb31b.png",
+    "src": "assets/isologo.png"
+  },
+  "assets/isotipo.png": {
+    "file": "assets/isotipo-f4b934af.png",
+    "src": "assets/isotipo.png"
+  },
+  "assets/logotipo.png": {
+    "file": "assets/logotipo-1f1fc07f.png",
+    "src": "assets/logotipo.png"
+  },
+  "assets/manzana.png": {
+    "file": "assets/manzana-c5ea33a2.png",
+    "src": "assets/manzana.png"
+  },
+  "assets/manzanaPixart.png": {
+    "file": "assets/manzanaPixart-ba9265ca.png",
+    "src": "assets/manzanaPixart.png"
+  },
+  "assets/mario.jpg": {
+    "file": "assets/mario-18597032.jpg",
+    "src": "assets/mario.jpg"
+  },
+  "assets/marioRealista.jpg": {
+    "file": "assets/marioRealista-cabc3bc3.jpg",
+    "src": "assets/marioRealista.jpg"
+  },
+  "assets/quiz.png": {
+    "file": "assets/quiz-6dc3a57b.png",
+    "src": "assets/quiz.png"
+  },
+  "assets/ruleta.png": {
+    "file": "assets/ruleta-1989b0be.png",
+    "src": "assets/ruleta.png"
+  },
+  "assets/slide1.png": {
+    "file": "assets/slide1-479d5e6b.png",
+    "src": "assets/slide1.png"
+  },
+  "assets/slide10.png": {
+    "file": "assets/slide10-60b94ed1.png",
+    "src": "assets/slide10.png"
+  },
+  "assets/slide11.png": {
+    "file": "assets/slide11-09591064.png",
+    "src": "assets/slide11.png"
+  },
+  "assets/slide12.png": {
+    "file": "assets/slide12-ad53561f.png",
+    "src": "assets/slide12.png"
+  },
+  "assets/slide13.png": {
+    "file": "assets/slide13-21590da5.png",
+    "src": "assets/slide13.png"
+  },
+  "assets/slide14.png": {
+    "file": "assets/slide14-e4b8937c.png",
+    "src": "assets/slide14.png"
+  },
+  "assets/slide15.png": {
+    "file": "assets/slide15-8c7ed9d5.png",
+    "src": "assets/slide15.png"
+  },
+  "assets/slide16.png": {
+    "file": "assets/slide16-5d35860b.png",
+    "src": "assets/slide16.png"
+  },
+  "assets/slide17.png": {
+    "file": "assets/slide17-7ac653cc.png",
+    "src": "assets/slide17.png"
+  },
+  "assets/slide18.png": {
+    "file": "assets/slide18-660a3204.png",
+    "src": "assets/slide18.png"
+  },
+  "assets/slide19.png": {
+    "file": "assets/slide19-75aaa6fd.png",
+    "src": "assets/slide19.png"
+  },
+  "assets/slide2.png": {
+    "file": "assets/slide2-8d3d3b53.png",
+    "src": "assets/slide2.png"
+  },
+  "assets/slide20.png": {
+    "file": "assets/slide20-8241be9e.png",
+    "src": "assets/slide20.png"
+  },
+  "assets/slide21.png": {
+    "file": "assets/slide21-bc49940f.png",
+    "src": "assets/slide21.png"
+  },
+  "assets/slide22.png": {
+    "file": "assets/slide22-7e4632b6.png",
+    "src": "assets/slide22.png"
+  },
+  "assets/slide23.png": {
+    "file": "assets/slide23-c60a0dd9.png",
+    "src": "assets/slide23.png"
+  },
+  "assets/slide24.png": {
+    "file": "assets/slide24-a0ec77bd.png",
+    "src": "assets/slide24.png"
+  },
+  "assets/slide25.png": {
+    "file": "assets/slide25-d51f0c7c.png",
+    "src": "assets/slide25.png"
+  },
+  "assets/slide3.png": {
+    "file": "assets/slide3-94d4acb4.png",
+    "src": "assets/slide3.png"
+  },
+  "assets/slide4.png": {
+    "file": "assets/slide4-fe55d539.png",
+    "src": "assets/slide4.png"
+  },
+  "assets/slide5.png": {
+    "file": "assets/slide5-ab46b51d.png",
+    "src": "assets/slide5.png"
+  },
+  "assets/slide6.png": {
+    "file": "assets/slide6-32de5e74.png",
+    "src": "assets/slide6.png"
+  },
+  "assets/slide7.png": {
+    "file": "assets/slide7-0b44e974.png",
+    "src": "assets/slide7.png"
+  },
+  "assets/slide8.png": {
+    "file": "assets/slide8-29f0f599.png",
+    "src": "assets/slide8.png"
+  },
+  "assets/slide9.png": {
+    "file": "assets/slide9-ff4e3f22.png",
+    "src": "assets/slide9.png"
+  },
+  "main.css": {
+    "file": "assets/main-fb7b00ef.css",
+    "src": "main.css"
+  },
+  "main.tsx": {
+    "assets": [
+      "assets/image1-0965a722.jpg",
+      "assets/ba-multiplica-3bc85d2e.jpg",
+      "assets/mario-18597032.jpg",
+      "assets/marioRealista-cabc3bc3.jpg",
+      "assets/logotipo-1f1fc07f.png",
+      "assets/isotipo-f4b934af.png",
+      "assets/imagotipo-f91752bb.png",
+      "assets/isologo-e13fb31b.png",
+      "assets/manzanaPixart-ba9265ca.png",
+      "assets/manzana-c5ea33a2.png",
+      "assets/ruleta-1989b0be.png",
+      "assets/quiz-6dc3a57b.png",
+      "assets/slide1-479d5e6b.png",
+      "assets/slide2-8d3d3b53.png",
+      "assets/slide3-94d4acb4.png",
+      "assets/slide4-fe55d539.png",
+      "assets/slide5-ab46b51d.png",
+      "assets/slide6-32de5e74.png",
+      "assets/slide7-0b44e974.png",
+      "assets/slide8-29f0f599.png",
+      "assets/slide9-ff4e3f22.png",
+      "assets/slide10-60b94ed1.png",
+      "assets/slide11-09591064.png",
+      "assets/slide12-ad53561f.png",
+      "assets/slide13-21590da5.png",
+      "assets/slide14-e4b8937c.png",
+      "assets/slide15-8c7ed9d5.png",
+      "assets/slide16-5d35860b.png",
+      "assets/slide17-7ac653cc.png",
+      "assets/slide18-660a3204.png",
+      "assets/slide19-75aaa6fd.png",
+      "assets/slide20-8241be9e.png",
+      "assets/slide21-bc49940f.png",
+      "assets/slide22-7e4632b6.png",
+      "assets/slide23-c60a0dd9.png",
+      "assets/slide24-a0ec77bd.png",
+      "assets/slide25-d51f0c7c.png",
+      "assets/FunSized-0000166c.ttf",
+      "assets/Giants-29f06371.ttf"
+    ],
+    "css": [
+      "assets/main-fb7b00ef.css"
+    ],
+    "file": "assets/main-079a31a4.js",
+    "isEntry": true,
+    "src": "main.tsx"
+  }
+}
