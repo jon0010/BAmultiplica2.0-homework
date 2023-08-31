@@ -15,7 +15,7 @@ cloudinary.config({
 });
 
 const corsOptions = {
-  origin: "https://b-amultiplica2-0-homework.vercel.app",
+  origin: "/index.html",
   credentials: true,
 };
 
