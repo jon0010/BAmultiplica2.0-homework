@@ -70,8 +70,4 @@ app.use(errorHandler);
 // static files
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("*", (_req, res) => {
-  res.sendFile(path.join(__dirname, "../../index.html"));
-});
-
 export default app;
