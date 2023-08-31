@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { VITE_UPLOAD_PRESET } from "../../variable";
+import { VITE_CLOUDINARY_NAME } from "../../variable";
 import "./semanaCuatro.css";
 
 interface Evaluation {
@@ -31,7 +33,11 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
   const [evaluatorName, setEvaluatorName] = useState<string>(""); // Nuevo estado: nombre del evaluador
   const [summary, setSummary] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const navigate = useNavigate();
+
+  const uploadPreset = VITE_UPLOAD_PRESET;
+  const cloudName = VITE_CLOUDINARY_NAME;
 
   const evaluationCriteria = [
     "La simpleza de la pieza gráfica por sobre la cantidad de recursos utilizados",
@@ -77,12 +83,28 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
     "Tomar en cuenta la audiencia",
   ];
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const file = event.target.files?.[0];
+
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setImageUrl(imageUrl);
-      localStorage.setItem("image_url", imageUrl);
+      setSelectedFile(file);
+
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", `${uploadPreset}`);
+
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+          formData
+        );
+
+        setImageUrl(response.data.secure_url);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
     }
   };
 
@@ -108,7 +130,6 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
   };
 
   const handleSubmit = async () => {
-    // Validar los conjuntos de calificaciones por separado
     const hasEvaluationRatings =
       Object.keys(evaluationRatings).length === evaluationCriteria.length;
     const hasElementRatings =
@@ -116,21 +137,20 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
     const hasDesignRuleRatings =
       Object.keys(designRuleRatings).length === designRuleCriteria.length;
 
-    // Si algún conjunto de calificaciones no está completo, mostrar un mensaje de error
     if (
       !imageUrl ||
       !hasEvaluationRatings ||
       !hasElementRatings ||
       !hasDesignRuleRatings ||
-      !evaluatorName || // Asegurarte de que el nombre del evaluador no esté vacío
-      !summary // Asegurarte de que el resumen no esté vacío
+      !evaluatorName ||
+      !summary
     ) {
       Swal.fire({
         icon: "error",
         title: "Campos incompletos",
         text: "Asegúrate de llenar todos los campos antes de enviar la evaluación.",
       });
-      return; // No cumplió con los requisitos, no se puede enviar la evaluación.
+      return;
     }
 
     setIsSubmitting(true);
@@ -142,8 +162,8 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
         ...elementRatings,
         ...designRuleRatings,
       },
-      evaluatorName: evaluatorName, // Agregar el nombre del evaluador al objeto
-      summary: summary, // Agregar el resumen al objeto
+      evaluatorName: evaluatorName,
+      summary: summary,
     };
 
     console.log({ a: evaluation });
@@ -158,8 +178,8 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
         setEvaluationRatings({});
         setElementRatings({});
         setDesignRuleRatings({});
-        setEvaluatorName(""); // Limpiar el nombre del evaluador después de enviar
-        setSummary(""); // Limpiar el resumen después de enviar
+        setEvaluatorName("");
+        setSummary("");
         Swal.fire({
           icon: "success",
           title: "Evaluación guardada",
@@ -177,7 +197,7 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
   const handleClearImage = () => {
     setImageUrl("");
     if (fileInputRef.current) {
-      fileInputRef.current.value = ""; // Limpiar el valor del campo de entrada de archivos
+      fileInputRef.current.value = "";
     }
   };
 
@@ -195,7 +215,7 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
       </div>
       <div className="text-center mt-5 mb-5">
         <input type="file" onChange={handleImageUpload} ref={fileInputRef} />
-        {imageUrl && <img src={imageUrl} alt="Uploaded Image" />}
+        {imageUrl && <img src={imageUrl} alt="Uploaded" width="300" />}
         <button style={{ textDecoration: "none" }} onClick={handleClearImage}>
           cambiar imagen
         </button>
@@ -213,8 +233,8 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
                   type="radio"
                   name={`${criterio}${index}`}
                   value={num}
-                  checked={evaluationRatings[criterio] === num} // Actualiza la comprobación del valor
-                  onChange={() => handleEvaluationRatingChange(criterio, num)} // Actualiza el llamado a la función
+                  checked={evaluationRatings[criterio] === num}
+                  onChange={() => handleEvaluationRatingChange(criterio, num)}
                   disabled={!imageUrl || isSubmitting}
                 />
                 {num}
@@ -237,7 +257,7 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
                   type="radio"
                   name={`${criterio}${index}`}
                   value={num}
-                  checked={elementRatings[criterio] === num} // Usa elementRatings en lugar de evaluationRatings
+                  checked={elementRatings[criterio] === num}
                   onChange={() => handleElementRatingChange(criterio, num)}
                   disabled={!imageUrl || isSubmitting}
                 />
@@ -261,7 +281,7 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
                   type="radio"
                   name={`${criterio}${index}`}
                   value={num}
-                  checked={designRuleRatings[criterio] === num} // Usa designRuleRatings en lugar de evaluationRatings
+                  checked={designRuleRatings[criterio] === num}
                   onChange={() => handleDesignRuleRatingChange(criterio, num)}
                   disabled={!imageUrl || isSubmitting}
                 />
