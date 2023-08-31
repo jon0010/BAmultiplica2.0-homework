@@ -5,7 +5,6 @@ import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
 import multer from "multer";
-import cors from "cors";
 import "dotenv/config";
 import "./db";
 
@@ -39,19 +38,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(morgan("dev"));
-app.options("*", (_req, res) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://b-amultiplica2-0-homework-slci.vercel.app"
-  );
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  res.sendStatus(200);
-});
+app.options(
+  "https://b-amultiplica2-0-homework-slci.vercel.app",
+  (_req, res) => {
+    res.header(
+      "Access-Control-Allow-Origin",
+      "https://b-amultiplica2-0-homework-slci.vercel.app"
+    );
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET, POST, OPTIONS, PUT, DELETE"
+    );
+    res.sendStatus(200);
+  }
+);
 
 app.use((_, res, next) => {
   res.header(
