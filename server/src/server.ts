@@ -15,7 +15,7 @@ cloudinary.config({
 });
 
 const corsOptions = {
-  origin: "/index.html",
+  origin: "*",
   credentials: true,
 };
 
