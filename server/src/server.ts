@@ -31,7 +31,7 @@ const dirname = path.dirname(path.resolve());
 const app = express();
 
 const corsOptions = {
-  origin: "https://b-amultiplica2-0-homework-slci.vercel.app",
+  origin: "*",
   credentials: true,
 };
 
