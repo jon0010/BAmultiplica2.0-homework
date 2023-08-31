@@ -14,6 +14,11 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+const corsOptions = {
+  origin: "https://b-amultiplica2-0-homework.vercel.app",
+  credentials: true,
+};
+
 const dirname = path.dirname(path.resolve());
 
 const app = express();
@@ -27,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors(corsOptions));
 app.options("*", (_req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
