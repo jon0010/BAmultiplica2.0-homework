@@ -5,6 +5,7 @@ import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
 import multer from "multer";
+import cors from "cors";
 import "dotenv/config";
 import "./db";
 
@@ -29,6 +30,10 @@ const dirname = path.dirname(path.resolve());
 
 const app = express();
 
+const corsOptions = {
+  origin: "https://b-amultiplica2-0-homework-slci.vercel.app",
+};
+
 // settings
 app.set("port", process.env.PORT_NAME ?? 3001);
 app.set("views", path.join(dirname, "views"));
@@ -37,33 +42,33 @@ app.set("views", path.join(dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors(corsOptions));
 app.use(morgan("dev"));
+app.options("*", (_req, res) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://b-amultiplica2-0-homework-slci.vercel.app"
+  );
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  res.sendStatus(200);
+});
 
-const allowedOrigins = [
-  "https://b-amultiplica2-0-homework-slci.vercel.app",
-  "https://b-amultiplica2-0-homework.vercel.app",
-];
-
-app.use((_req, res, next) => {
-  const origin = _req.headers.origin as string;
-
-  if (allowedOrigins.includes(origin)) {
-    res.header("Access-Control-Allow-Origin", origin);
-    res.header("Access-Control-Allow-Credentials", "true");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    res.header(
-      "Access-Control-Allow-Methods",
-      "GET, POST, OPTIONS, PUT, DELETE"
-    );
-  }
-
-  if (_req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-
+app.use((_, res, next) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://b-amultiplica2-0-homework-slci.vercel.app"
+  );
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
 
