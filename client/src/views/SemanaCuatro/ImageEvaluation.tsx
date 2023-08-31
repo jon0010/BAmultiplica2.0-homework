@@ -169,7 +169,7 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
     console.log({ a: evaluation });
     try {
       const response = await axios.post(
-        "http://localhost:3001/evaluation",
+        "https://ba-multiplica.onrender.com/evaluation",
         evaluation
       );
       if (response.status === 201) {

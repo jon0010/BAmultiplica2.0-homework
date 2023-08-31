@@ -21,7 +21,7 @@ const HistorialDeEvaluaciones: React.FC<
   useEffect(() => {
     // Realizar una solicitud GET al backend para obtener las evaluaciones
     axios
-      .get("http://localhost:3001/evaluation")
+      .get("https://ba-multiplica.onrender.com/evaluation")
       .then((response) => {
         setEvaluations(response.data);
         console.log({ a: response.data });
