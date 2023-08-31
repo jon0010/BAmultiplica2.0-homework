@@ -31,7 +31,7 @@ const dirname = path.dirname(path.resolve());
 const app = express();
 
 const corsOptions = {
-  origin: "https://b-amultiplica2-0-homework-slci.vercel.app",
+  origin: "*",
 };
 
 // settings
@@ -45,10 +45,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.options("*", (_req, res) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://b-amultiplica2-0-homework-slci.vercel.app"
-  );
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -59,10 +56,7 @@ app.options("*", (_req, res) => {
 });
 
 app.use((_, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://b-amultiplica2-0-homework-slci.vercel.app"
-  );
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
