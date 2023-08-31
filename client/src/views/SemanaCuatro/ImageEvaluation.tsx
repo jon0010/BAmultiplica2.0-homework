@@ -90,7 +90,7 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
 
     if (file) {
       setSelectedFile(file);
-
+      console.log(selectedFile);
       try {
         const formData = new FormData();
         formData.append("file", file);
