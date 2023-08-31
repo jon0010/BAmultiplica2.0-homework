@@ -8,6 +8,7 @@ import SemanaDos from "./views/SemanaDos/SemanaDos";
 import SemanaTres from "./views/SemanaTres/SemanaTres";
 import SemanaCuatro from "./views/SemanaCuatro/SemanaCuatro";
 import HistorialDeEvaluaciones from "./views/historialDeEvaluaciones/HistorialDeEvaluaciones";
+import SemanaCinco from "./views/semanaCinco/SemanaCinco";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/semanados" element={<SemanaDos />} />
         <Route path="/semanatres" element={<SemanaTres />} />
         <Route path="/semanacuatro" element={<SemanaCuatro />} />
+        <Route path="/semanacinco" element={<SemanaCinco />} />
         <Route path="/historial" element={<HistorialDeEvaluaciones />} />
       </Routes>
       <Footer />
