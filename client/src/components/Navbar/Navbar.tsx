@@ -29,7 +29,7 @@ const Navbar = () => {
                 aria-current="page"
                 to="/semanauno"
               >
-                SEMANA 1
+                SEMANA ccc
               </Link>
             </li>
             <li className="nav-item">
