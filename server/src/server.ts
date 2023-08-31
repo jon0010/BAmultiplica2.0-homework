@@ -45,7 +45,10 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.options("*", (_req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://b-amultiplica2-0-homework-slci.vercel.app"
+  );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
