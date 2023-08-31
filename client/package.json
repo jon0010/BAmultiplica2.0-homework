@@ -44,6 +44,7 @@
     "sweetalert2": "^11.7.27"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-slick": "^0.23.10",
