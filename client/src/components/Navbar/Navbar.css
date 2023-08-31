@@ -10,3 +10,34 @@
 .navbar-nav li {
   margin-right: 12rem;
 }
+
+/* Navbar.css */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+  margin-right: 2.5em;
+}
+
+.navbar-brand {
+  margin-right: auto;
+}
+
+.navbar-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.5em;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 3px;
+  background-color: #ccc;
+}
+
+.navbar-nav .nav-item:last-child::after {
+  display: none;
+}

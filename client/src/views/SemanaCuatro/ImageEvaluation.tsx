@@ -297,7 +297,7 @@ const ImageEvaluation: React.FC<ImageEvaluationProps> = ({ addToHistory }) => {
           Resumen final y justificación de las notas:
         </label>
         <textarea
-          style={{ width: "22em", alignItems: "center" }}
+          style={{ width: "14em", alignItems: "center" }}
           id="summary"
           value={summary}
           onChange={(event) => setSummary(event.target.value)}

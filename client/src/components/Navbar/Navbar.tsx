@@ -7,7 +7,11 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src={BAlogo} style={{ width: "8em" }} alt="BA Multiplica Logo" />
+          <img
+            src={BAlogo}
+            style={{ width: "8em", marginRight: "2em" }}
+            alt="BA Multiplica Logo"
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -20,16 +24,18 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto">
-            {" "}
+        <div
+          className="collapse navbar-collapse justify-content-start"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav">
             <li className="nav-item">
               <Link
                 className="nav-link active fontCustom1 fs-3"
                 aria-current="page"
                 to="/semanauno"
               >
-                SEMANA ccc
+                SEMANA 1
               </Link>
             </li>
             <li className="nav-item">
@@ -63,9 +69,19 @@ const Navbar = () => {
               <Link
                 className="nav-link active fontCustom1 fs-3"
                 aria-current="page"
+                to="/semanacinco"
+              >
+                SEMANA 5
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active fontCustom1 fs-3"
+                aria-current="page"
                 to="/historial"
               >
-                HISTORIAL DE EVALUACIONES
+                HISTORIAL DE
+                <br /> EVALUACIONES
               </Link>
             </li>
           </ul>
